@@ -10,6 +10,10 @@ jobs:
     # you must check out the repository
       - name: Chekout
         uses: actions/checkout@v2
+      - name: Get the current dir
+        run: pwd
+      - name: Print directory content
+        run: ls -la
       - name: Hello world action step
         # uses: phozzy/test-action@v1
         uses: ./ # Uses an action in the root directory
