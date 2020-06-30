@@ -1,0 +1,20 @@
+on:
+- push
+
+jobs:
+  hello_world_jobs:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+    # To use repository's action,
+    # you must check out the repository
+      - name: Chekout
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        uses: phozzy/test-action@v1
+        id: hello
+        with:
+          who-to-greet: 'Lord of Light'
+      # User the output from the 'hello' step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
