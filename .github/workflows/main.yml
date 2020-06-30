@@ -15,8 +15,8 @@ jobs:
       - name: Print directory content
         run: ls -la
       - name: Hello world action step
-        # uses: phozzy/test-action@v1
-        uses: ./ # Uses an action in the root directory
+        uses: phozzy/test-action@v1
+        # uses: ./ # Uses an action in the root directory
         id: hello
         with:
           who-to-greet: 'Lord of Light'
